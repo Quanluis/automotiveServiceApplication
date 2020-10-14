@@ -55,6 +55,7 @@
             this.partsTotal = new System.Windows.Forms.TextBox();
             this.taxTotal = new System.Windows.Forms.TextBox();
             this.finalTotal = new System.Windows.Forms.TextBox();
+            this.nonRoutineInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // oilLabel
@@ -183,6 +184,7 @@
             // 
             this.laborCost.Location = new System.Drawing.Point(623, 256);
             this.laborCost.Name = "laborCost";
+            this.laborCost.ReadOnly = true;
             this.laborCost.Size = new System.Drawing.Size(100, 20);
             this.laborCost.TabIndex = 14;
             // 
@@ -191,9 +193,9 @@
             this.partLabel.AutoSize = true;
             this.partLabel.Location = new System.Drawing.Point(552, 215);
             this.partLabel.Name = "partLabel";
-            this.partLabel.Size = new System.Drawing.Size(31, 13);
+            this.partLabel.Size = new System.Drawing.Size(52, 13);
             this.partLabel.TabIndex = 17;
-            this.partLabel.Text = "Parts";
+            this.partLabel.Text = "Part price";
             // 
             // laborLabel
             // 
@@ -248,6 +250,7 @@
             this.calculateButton.TabIndex = 24;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // clearButton
             // 
@@ -266,11 +269,13 @@
             this.exitButton.TabIndex = 26;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // serviceAndLaborTotal
             // 
             this.serviceAndLaborTotal.Location = new System.Drawing.Point(385, 253);
             this.serviceAndLaborTotal.Name = "serviceAndLaborTotal";
+            this.serviceAndLaborTotal.ReadOnly = true;
             this.serviceAndLaborTotal.Size = new System.Drawing.Size(100, 20);
             this.serviceAndLaborTotal.TabIndex = 27;
             // 
@@ -278,6 +283,7 @@
             // 
             this.partsTotal.Location = new System.Drawing.Point(385, 295);
             this.partsTotal.Name = "partsTotal";
+            this.partsTotal.ReadOnly = true;
             this.partsTotal.Size = new System.Drawing.Size(100, 20);
             this.partsTotal.TabIndex = 28;
             // 
@@ -285,6 +291,7 @@
             // 
             this.taxTotal.Location = new System.Drawing.Point(385, 338);
             this.taxTotal.Name = "taxTotal";
+            this.taxTotal.ReadOnly = true;
             this.taxTotal.Size = new System.Drawing.Size(100, 20);
             this.taxTotal.TabIndex = 29;
             // 
@@ -292,14 +299,26 @@
             // 
             this.finalTotal.Location = new System.Drawing.Point(385, 382);
             this.finalTotal.Name = "finalTotal";
+            this.finalTotal.ReadOnly = true;
             this.finalTotal.Size = new System.Drawing.Size(100, 20);
             this.finalTotal.TabIndex = 30;
+            // 
+            // nonRoutineInfo
+            // 
+            this.nonRoutineInfo.AutoSize = true;
+            this.nonRoutineInfo.Location = new System.Drawing.Point(552, 299);
+            this.nonRoutineInfo.Name = "nonRoutineInfo";
+            this.nonRoutineInfo.Size = new System.Drawing.Size(235, 13);
+            this.nonRoutineInfo.TabIndex = 31;
+            this.nonRoutineInfo.Text = "* Each $60 part = 1 Hour of labor = $20 per hour";
+            this.nonRoutineInfo.Click += new System.EventHandler(this.nonRoutineInfo_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nonRoutineInfo);
             this.Controls.Add(this.finalTotal);
             this.Controls.Add(this.taxTotal);
             this.Controls.Add(this.partsTotal);
@@ -362,6 +381,7 @@
         private System.Windows.Forms.TextBox partsTotal;
         private System.Windows.Forms.TextBox taxTotal;
         private System.Windows.Forms.TextBox finalTotal;
+        private System.Windows.Forms.Label nonRoutineInfo;
     }
 }
 
